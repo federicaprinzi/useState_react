@@ -1,18 +1,35 @@
+import React, { useState } from "react";
 import "./App.css";
+import CounterDisplay from "./components/CounterDisplay";
 
-const AlertClock = ({ showTime }) => {
-  return <button onClick={showTime}>Che ore sono?</button>;
-};
+function Counter({ initialValue, decrementValue }) {
+  const [count, setCount] = useState(initialValue);
 
-const App = () => {
-  const showTime = () => {
-    const currentTime = new Date().toLocaleTimeString();
-    alert(currentTime);
+  const handleValue = () => {
+    setCount(count - decrementValue);
+  };
+
+  const handleReset = () => {
+    setCount(initialValue);
   };
 
   return (
     <div>
-      <AlertClock showTime={showTime} />
+      <CounterDisplay count={count} />
+      <button className="buttons" onClick={handleValue}>
+        DIMINUISCI
+      </button>
+      <button className="buttons" onClick={handleReset}>
+        RESETTA
+      </button>
+    </div>
+  );
+}
+
+const App = () => {
+  return (
+    <div>
+      <Counter initialValue={10} decrementValue={1} />
     </div>
   );
 };

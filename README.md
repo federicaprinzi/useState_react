@@ -1,3 +1,5 @@
-Create an AlertClock function component that renders a button. When the button is clicked, an alert should be shown with the current time.
-Render the AlertClock component within the App component. Make it so that the event handler is received as a prop by the AlertClock component, instead of being implemented within the component itself.
-Use the Date object to get the current time.
+- Extract the h2 tag showing the counter state variable into a new component called CounterDisplay
+  and render it within the Counter component, passing it the count state variable as a prop.
+- Add a decrement button and a reset button to the Counter component. The decrement button should
+  decrement the counter by the amount passed as a prop, and the reset button should reset the counter
+  to the initial value passed as a prop.
